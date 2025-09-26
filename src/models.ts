@@ -16,13 +16,13 @@ class Peli {
 //* Definimos un tipo llamado SearchOptions
 //* Que puede tener dos propiedades opcionales: title y tag
 type SearchOptions = { title?: string; tag?: string };
+// ruta absoluta al pelis.json en la raíz del proyecto
+const file = path.resolve(__dirname, "../pelis.json");
 
 class PelisCollection {
-  
+   
   //* Obtener todas las  pelis
   async getAll(): Promise<Peli[]> {
-  // ruta absoluta al pelis.json en la raíz del proyecto
-   const file = path.resolve(__dirname, "../pelis.json");
     return jsonfile.readFile(file)
   }
 
@@ -43,7 +43,7 @@ class PelisCollection {
       // magia que agrega la pelicula a un objeto data
         const data = await this.getAll(); //* treaemos el array de peliculas 
         data.push(peli);
-        await jsonfile.writeFile("../pelis.json", data);
+        await jsonfile.writeFile(file, data);
         return true;
       }
   }
