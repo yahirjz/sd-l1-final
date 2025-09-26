@@ -43,7 +43,7 @@ class PelisCollection {
       // magia que agrega la pelicula a un objeto data
         const data = await this.getAll(); //* treaemos el array de peliculas 
         data.push(peli);
-        await jsonfile.writeFile("./pelis.json", data);
+        await jsonfile.writeFile("../pelis.json", data);
         return true;
       }
   }
