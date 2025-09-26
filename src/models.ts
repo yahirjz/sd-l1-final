@@ -1,7 +1,7 @@
 import * as jsonfile from "jsonfile";
 import * as path from "path";
 // El siguiente import no se usa pero es necesario
-import { title } from "process";
+
 // de esta forma Typescript se entera que tiene que incluir
 // el .json y pasarlo a la carpeta /dist
 // si no, solo usandolo desde la libreria jsonfile, no se dá cuenta

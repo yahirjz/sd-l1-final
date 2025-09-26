@@ -1,6 +1,5 @@
 import minimist from "minimist";
 import { PelisController } from "./controllers"; // importación de controller
-import { get } from "http";
 
 
 
