@@ -1,8 +1,6 @@
 import * as jsonfile from "jsonfile";
-
-
+import * as path from "path";
 // El siguiente import no se usa pero es necesario
-import "./pelis.json";
 import { title } from "process";
 // de esta forma Typescript se entera que tiene que incluir
 // el .json y pasarlo a la carpeta /dist
@@ -23,8 +21,9 @@ class PelisCollection {
   
   //* Obtener todas las  pelis
   async getAll(): Promise<Peli[]> {
-  const get = await jsonfile.readFile("./pelis.json")
-    return get;
+  // ruta absoluta al pelis.json en la raíz del proyecto
+   const file = path.resolve(__dirname, "../pelis.json");
+    return jsonfile.readFile(file)
   }
 
   //* Obtener por ID

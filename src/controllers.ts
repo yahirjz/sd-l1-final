@@ -1,4 +1,4 @@
-import { promises } from "dns";
+
 import { PelisCollection, Peli } from "./models";
 
 type Options = {
